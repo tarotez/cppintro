@@ -1,13 +1,22 @@
 /* overload_vec3d.cpp */
 #include <iostream>
+#include <string>
+#include <sstream>
 using namespace std;
+
+string to_str(int num){
+  stringstream ss;
+  ss << num;
+  return ss.str();
+}
 
 class vec3d {
 public:
   int d1, d2, d3;
   vec3d(int i1, int i2, int i3){d1 = i1; d2 = i2; d3 = i3;};
   vec3d(){};
-  string show(){return "(" + to_string(d1) + "," + to_string(d2) + "," + to_string(d3) + ")";};
+  string show(){return "(" + to_str(d1) + "," + to_str(d2) + "," + to_str(d3) +\
+ ")";};
 };
 
 // operator overload for +
