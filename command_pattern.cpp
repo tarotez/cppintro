@@ -20,6 +20,7 @@ class openFileCommand : public command {
 class menuItem {
   command* cmd;
 public:
+  menuItem(){};
   menuItem(command* c){cmd = c;};
   void onClick(){
     cmd->execute();
@@ -27,10 +28,9 @@ public:
 };
 
 int main(){
-  command* c0 = new createNewFileCommand;
-  command* c1 = new openFileCommand;
-  menuItem m0(c0);
-  menuItem m1(c1);
-  m0.onClick();
-  m1.onClick();
+  menuItem* m = new menuItem [2];
+  m[0] = menuItem(new createNewFileCommand);
+  m[1] = menuItem(new openFileCommand);
+  m[0].onClick();
+  m[1].onClick();
 }
