@@ -13,7 +13,6 @@ class vector {
 class regressor {
 public:
   virtual void fit(matrix train_x, vector train_y) = 0;
-  // virtual vector predict(matrix test_x){vector v; return v;};
   virtual vector predict(matrix test_x) = 0;
 };
 
