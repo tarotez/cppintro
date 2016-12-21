@@ -12,8 +12,9 @@ class vector {
 
 class regressor {
 public:
-  virtual void fit(matrix train_x, vector train_y){};
-  virtual vector predict(matrix test_x){vector v; return v;};
+  virtual void fit(matrix train_x, vector train_y) = 0;
+  // virtual vector predict(matrix test_x){vector v; return v;};
+  virtual vector predict(matrix test_x) = 0;
 };
 
 class linearRegressor : public regressor {
@@ -61,7 +62,7 @@ public:
       return new polyRegressor;
     }else if(regressorType == "gp"){
       return new gpRegressor;
-    }else{      
+    }else{
       throw new noRegressorException;
     }
   }
@@ -73,7 +74,7 @@ int main()
   matrix train_x, test_x;
   vector train_y, est_y;
   regressorCreator rc;
-  cout << "回帰モデルを入力してください。" << endl;
+  cout << "どの回帰モデルを使いますか？" << endl;
   cin >> regressorType;
   regressor* r = rc.create(regressorType);
   r->fit(train_x, train_y);
