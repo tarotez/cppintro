@@ -31,4 +31,6 @@ int main(){
   command* c1 = new openFileCommand;
   menuItem m0(c0);
   menuItem m1(c1);
+  m0.onClick();
+  m1.onClick();
 }
