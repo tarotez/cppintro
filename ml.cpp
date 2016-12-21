@@ -75,7 +75,7 @@ int main()
   regressorCreator rc;
   cout << "どの回帰モデルを使いますか？" << endl;
   cin >> regressorType;
-  regressor* r = rc.create(regressorType);
-  r->fit(train_x, train_y);
-  est_y = r->predict(test_x);
+  regressor* rp = rc.create(regressorType);
+  rp->fit(train_x, train_y);
+  est_y = rp->predict(test_x);
 }
