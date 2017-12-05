@@ -14,7 +14,7 @@ class addressbook{
 public:
   addressbook();
   void listFriends();
-  void addFriend(string name);
+  void addFriend(string n);
 };
 
 // constructor
@@ -22,8 +22,8 @@ addressbook::addressbook(){
   numberOfFriends = 0;  
 }
 
-void addressbook::addFriend(string name){
-  friends[numberOfFriends].name = name;
+void addressbook::addFriend(string n){
+  friends[numberOfFriends].name = n;
   numberOfFriends++;
 }
 
