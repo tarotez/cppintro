@@ -1,8 +1,8 @@
-/* arb_swap.cpp */
+/* arb_exchange.cpp */
 #include <iostream>
 using namespace std;
 
-template <class X> void swap_generic(X &a, X &b)
+template <class X> void exchange_generic(X &a, X &b)
 {
   X temp;
 
@@ -19,8 +19,8 @@ int main(){
   cout << "置換前：i = " << i << ", j = " << j << endl;
   cout << "置換前：x = " << x << ", y = " << y << endl;
     
-  swap_generic(i, j);
-  swap_generic(x, y);
+  exchange_generic(i, j);
+  exchange_generic(x, y);
   cout << "\n";
 
   cout << "置換後：i = " << i << ", j = " << j << endl;
