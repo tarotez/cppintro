@@ -5,7 +5,7 @@ using namespace std;
 class person{
 public:
   string address;
-  string name; 
+  string name;
 };
 
 class addressbook{
@@ -15,11 +15,12 @@ public:
   addressbook();
   void listFriends();
   void addFriend(string n);
+  void addFriend(string n, string)
 };
 
 // constructor
 addressbook::addressbook(){
-  numberOfFriends = 0;  
+  numberOfFriends = 0;
 }
 
 void addressbook::addFriend(string n){
@@ -30,7 +31,7 @@ void addressbook::addFriend(string n){
 void addressbook::listFriends(){
   for(int i = 0; i < numberOfFriends; i++){
     cout << friends[i].name << "\n";
-  }      
+  }
 }
 
 int main()
@@ -47,5 +48,5 @@ int main()
   }
 
   cout << "\n名前リスト:\n";
-  abook.listFriends();  
+  abook.listFriends();
 }

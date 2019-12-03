@@ -19,6 +19,7 @@ public:
 };
 
 class member : public person{
+protected:
   int memberid;
 public:
   void requestData(){
@@ -35,10 +36,10 @@ class nonmember : public person {
   string phone;
 public:
   void requestData(){
-    cout << "    メールアドレスを入力してください。\n    ";    
+    cout << "    メールアドレスを入力してください。\n    ";
     cin >> email;
-    cout << "    電話番号を入力してください。\n    ";    
-    cin >> phone;    
+    cout << "    電話番号を入力してください。\n    ";
+    cin >> phone;
   };
   void showData(){
     cout << "  " << name << "(非会員) " << email << " / " << phone << "\n";
@@ -69,7 +70,7 @@ int main()
     q = q->next;
     i++;
   }
-  
+
   cout << "\n参加者一覧：\n";
   q = p;
   while(i > 0){
@@ -77,5 +78,5 @@ int main()
     q = q->next;
     i--;
   }
-  cout << "\n"; 
+  cout << "\n";
 }
